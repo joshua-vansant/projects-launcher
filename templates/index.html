@@ -3,21 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Web Projects Portfolio</title>
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>JMVS Web Projects</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            /* height: 100%; */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .parallax {
+            background-image: url("{{ url_for('static', filename='images/shiny.jpg') }}");
+            height: 100%;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .header-content {
+            text-align: center;
+            padding: 50px 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        #about {
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 0.25rem;
+        }
+
+        .list-group-item {
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        footer.bg-dark {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+        }
+
+        .content {
+            background-color: transparent;
+        }
+    </style>
+    
 </head>
 <body>
+    <div class="parallax">
+        <div class="header-content">
+            <h1>Joshua Van Sant<br/>Web Projects</h1>
+        </div>
 
-    <header class="bg-dark text-white text-center py-4">
-        <h1>Joshua Van Sant<br/>Web Projects Portfolio</h1>
-    </header>
-
-    <main class="container mt-4">
+        <div class="content">
+            <main class="container">
         <section id="projects" class="mb-5">
-            <h2 class="mb-4">My Projects</h2>
             <div class="list-group">
                 <a href="https://crypto-project-s986.onrender.com" target="_blank" class="list-group-item list-group-item-action">
-                    <h3 class="mb-2">Cryptocurrency Project</h3>
+                    <h3 class="mb-2 text-center">Cryptocurrency Project</h3>
                     <p>
                         This project is a web application that provides real-time and historical data analysis for cryptocurrencies, including <strong>Bitcoin</strong>, <strong>Ethereum</strong>, and <strong>Tether</strong>. 
                         It uses <em>Flask</em> for the web interface, <em>SQLAlchemy</em> for database management, and <em>Plotly</em> for visualizing data.
@@ -29,7 +68,7 @@
                     </p>
                 </a>
                 <a href="https://recipe-project-ajgm.onrender.com" target="_blank" class="list-group-item list-group-item-action">
-                    <h3 class="mb-2">Recipes Project</h3>
+                    <h3 class="mb-2 text-center">Recipes Project</h3>
                     <p>
                         Recipes Project is a web application designed for managing my favorite recipes. Users can add new recipes, view details of existing ones <em>(with images fetched from an API)</em>, and delete recipes.
                     </p>
@@ -42,9 +81,9 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
+        <section id="about" class="p-3 mb-2 text-black">
+            <h2 class="text-center">About Me</h2>
+            <p class="text-center">
                 <strong>Data Processing Specialist with Expertise in SQL, Python, and Automation</strong>
             </p>
             <p>
@@ -57,7 +96,6 @@
                 I am committed to delivering high-quality results, whether it's through optimizing data processes, automating tasks, or creating innovative solutions that drive business success.
             </p>
         </section>
-        
     </main>
 
     <footer class="bg-dark text-white text-center py-3">
@@ -77,9 +115,21 @@
             </div>
         </section>
     </footer>
-
+</div>
+</div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+    <script>
+        var rellax = new Rellax('.parallax-layer', {
+        speed: -2,
+        center: false,
+        wrapper: null,
+        round: true,
+        vertical: true,
+        horizontal: false
+    });
+    </script>
 </body>
 </html>
